@@ -3,6 +3,7 @@ import { Quicksand } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { MobileSidebar } from '@/components/MobileSidebar'
 
 const quicksand = Quicksand({ subsets: ['latin'] })
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         <body className={`${quicksand.className} flex flex-col min-h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800`}>
           <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 items-center">
+              <MobileSidebar />
               <div className="mr-4 hidden md:flex">
                 <Link className="mr-6 flex items-center space-x-2" href="/dashboard">
                   <svg
@@ -70,18 +72,18 @@ export default function RootLayout({
                   </span>
                 </Link>
                 <nav className="flex items-center space-x-6 text-sm font-medium">
-                  <a
+                  <Link
                     className="transition-colors hover:text-foreground/80 text-foreground/60"
                     href="/playground"
                   >
                     Documentation
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="transition-colors hover:text-foreground/80 text-foreground/60"
                     href="/support"
                   >
                     Support
-                  </a>
+                  </Link>
                 </nav>
               </div>
               <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
