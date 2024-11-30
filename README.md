@@ -13,6 +13,7 @@ pnpm dev
 bun dev
 ```
 # Project Name
+Auto Invoice API
 
 ## Environment Variables
 
